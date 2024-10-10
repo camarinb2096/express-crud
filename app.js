@@ -5,8 +5,10 @@ const app = express();
 
 const port = process.env.SERVER_PORT || 3000;
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+    res.render('index', { name: 'World' });
 });
 
 app.listen(port, (err) => {
