@@ -1,9 +1,8 @@
 const express = require('express');
-require('dotenv').config(); // Cargar variables de entorno
+require('dotenv').config();
 
 const app = express();
 
-// Proporcionar un puerto por defecto si la variable de entorno no está definida
 const port = process.env.SERVER_PORT || 3000;
 
 app.get('/', (req, res) => {
