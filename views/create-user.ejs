@@ -8,7 +8,15 @@
 </head>
 <body>
   <h1>Create a New User</h1>
-  <form action="/users" method="POST">
+
+  <!-- Mostrar mensaje de confirmación o error -->
+  <% if (typeof message !== 'undefined') { %>
+    <div class="alert <%= success ? 'alert-success' : 'alert-danger' %>">
+      <%= message %>
+    </div>
+  <% } %>
+
+  <form action="/api/users" method="POST">
     <label for="id">ID:</label>
     <input type="text" name="id" id="id" required><br><br>
 

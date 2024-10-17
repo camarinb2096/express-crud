@@ -15,12 +15,19 @@ exports.create = (req, res) => {
 
   // Save User in the database
   User.create(user, (err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the User."
-      });
-    else res.send(data);
+  if (err) {
+    // Retornar la vista con un mensaje de error
+    res.render('create-user', { 
+      message: err.message || "Some error occurred while creating the User.", 
+      success: false 
+    });
+  } else {
+    // Retornar la vista con un mensaje de éxito
+    res.render('create-user', { 
+      message: "User created successfully!", 
+      success: true 
+    });
+  }
   });
 };
 
