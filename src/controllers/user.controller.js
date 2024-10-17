@@ -32,17 +32,20 @@ exports.create = (req, res) => {
 };
 
 // Retrieve all users from the database
+// Retrieve all users from the database and render the view
 exports.findAll = (req, res) => {
-
   User.getAll((err, data) => {
-    if (err)
+    if (err) {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving users."
+        message: err.message || "Some error occurred while retrieving users."
       });
-    else res.send(data);
+    } else {
+      // Renderizar la vista 'index.ejs' y pasar los datos de los usuarios
+      res.render('index', { users: data });
+    }
   });
 };
+
 
 // Find a single User by Id
 exports.findOne = (req, res) => {

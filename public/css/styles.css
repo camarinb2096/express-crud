@@ -3,19 +3,67 @@ body, html {
   height: 100%;
   margin: 0;
   display: flex;
-  justify-content: center;  /* Centrar horizontalmente */
-  align-items: center;      /* Centrar verticalmente */
-  flex-direction: column;   /* Alineación de elementos en columna */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #f8f9fa;
-  font-family: 'Poppins', sans-serif; /* Aplicar la fuente Poppins */
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
   margin-bottom: 20px;
   font-size: 2rem;
   text-align: center;
+  font-weight: 600;
 }
 
+/* Estilos para la tabla de usuarios */
+table {
+  width: 60%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Acciones */
+.actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+a.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+a.btn:hover {
+  background-color: #218838;
+}
+
+/* Estilos para el formulario */
 form {
   background-color: #fff;
   padding: 30px;
@@ -40,6 +88,7 @@ input {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
@@ -51,8 +100,30 @@ button {
   font-size: 16px;
   border-radius: 5px;
   width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
 button:hover {
   background-color: #218838;
+}
+
+/* Estilos para los mensajes */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
