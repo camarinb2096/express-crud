@@ -26,8 +26,21 @@ Para ejecutar este proyecto en tu máquina local, sigue los siguientes pasos.
 - Node.js y npm instalados en tu máquina.
 - MySQL instalado y configurado.
 
+### Endpoints
+
+| Método | Ruta                        | Descripción                                      | Parámetros             |
+|--------|-----------------------------|--------------------------------------------------|------------------------|
+| GET    | `/api/users`                | Obtiene la lista de todos los usuarios.          | N/A                    |
+| GET    | `/api/users/create-user`     | Muestra el formulario para crear un nuevo usuario| N/A                    |
+| POST   | `/api/users`                | Crea un nuevo usuario en la base de datos.       | `id`, `email`, `phone_number` (en el cuerpo de la solicitud) |
+| GET    | `/api/users/:id`            | Obtiene un usuario específico por su ID.         | `id` en la URL         |
+| PUT    | `/api/users/:id`            | Actualiza los datos de un usuario específico.    | `id` en la URL, `email`, `phone_number` (en el cuerpo de la solicitud) |
+| DELETE | `/api/users/:id`            | Elimina un usuario específico por su ID.         | `id` en la URL         |
+
 ### Clonar el repositorio
 
 ```bash
 git clone https://github.com/tu_usuario/user-management-system.git
 cd user-management-system
+
+
