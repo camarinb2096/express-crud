@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static('public'));
 
 const port = process.env.SERVER_PORT || 3000;
 
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 });
 
 require("./src/routes/user.routes.js")(app);
+
 
 app.listen(port, (err) => {
   if (err) {
